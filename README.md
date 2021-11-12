@@ -6,4 +6,6 @@ Reading the each line by line with a 1 second delay in between, format the strin
 This Client Air Transmission System will be developed by: Mohamed Halbouni
 
 Note: I already have another repo "MileStone" which has some code for the Air Transmission System. But this repo will be the cleaner version. 
-Note: I had to use this current repo "Milestone-2" since i needed to do a lot of research on how to use GitHub
+Note: I had to use this current repo "Milestone-2" since i needed to do a lot of research on how to use GitHub.
+
+Now the Github is up and running.
