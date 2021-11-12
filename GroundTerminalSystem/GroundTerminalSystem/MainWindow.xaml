@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GroundTerminalSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1050">
     <Grid>
+
+        <Button Content="Button" HorizontalAlignment="Left" Margin="856,119,0,0" VerticalAlignment="Top" Width="75" />
+        <Button Content="Display" HorizontalAlignment="Left" Margin="856,161,0,0" VerticalAlignment="Top" Width="75" />
+        <ToggleButton x:Name = "cb2" Content = "Live Mode"  
+            Checked = "HandleCheck" Unchecked = "HandleUnchecked"  HorizontalAlignment="Left" Margin="856,272,0,0" VerticalAlignment="Top" Width="90" 
+            />
+        <Grid RenderTransformOrigin="0.368,0.469">
+            <ListView Margin="10,24,223,20" Name="txtArea">
+
+
+            </ListView>
+
+        </Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="856,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtSearch"/>
+
+
+
+
+
 
     </Grid>
 </Window>
