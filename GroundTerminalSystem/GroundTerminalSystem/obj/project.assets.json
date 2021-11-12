@@ -8,23 +8,26 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\moham\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\asada\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\moham\\OneDrive\\Desktop\\Milestone-2\\GroundTerminalSystem\\GroundTerminalSystem\\GroundTerminalSystem.csproj",
+      "projectUniqueName": "C:\\Users\\asada\\Desktop\\Milestone-2\\GroundTerminalSystem\\GroundTerminalSystem\\GroundTerminalSystem.csproj",
       "projectName": "GroundTerminalSystem",
-      "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Milestone-2\\GroundTerminalSystem\\GroundTerminalSystem\\GroundTerminalSystem.csproj",
-      "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Milestone-2\\GroundTerminalSystem\\GroundTerminalSystem\\obj\\",
+      "projectPath": "C:\\Users\\asada\\Desktop\\Milestone-2\\GroundTerminalSystem\\GroundTerminalSystem\\GroundTerminalSystem.csproj",
+      "packagesPath": "C:\\Users\\asada\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\asada\\Desktop\\Milestone-2\\GroundTerminalSystem\\GroundTerminalSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\asada\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -68,7 +71,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
