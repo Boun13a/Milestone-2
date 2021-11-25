@@ -43,5 +43,30 @@ namespace GroundTerminalSystem
             }
             return cnn;
         }
+
+
+        /*
+         * Method Name: insertIntoAttitudeTable()
+         * Description: This method inserts telemetry data into the attitude table of the database
+         * Parameters: string tailNumber, string altitude, string pitch, string bank
+         * Return value : void
+         */
+        public void insertToAttitudeTable(string tailNumber, string altitude, string pitch, string bank)
+        {
+            try
+            {
+                string attitudeQuery = "INSERT INTO attitude(tailNumber,altitude,pitch,bank) VALUES('" + tailNumber + "','" + altitude + "','" + pitch + "','" + bank + "'); ";
+                //start the SQL command using the connection string
+                MySqlCommand sqlAttitudeCommand = new MySqlCommand(attitudeQuery, cnn);
+                sqlAttitudeCommand.Prepare();
+                sqlAttitudeCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                cnn.Close();
+            }
+
+        }
     }
 }
