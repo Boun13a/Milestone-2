@@ -68,5 +68,30 @@ namespace GroundTerminalSystem
             }
 
         }
+
+
+        /*
+         * Method Name: insertIntoGforceTable()
+         * Description: This method inserts telemetry data into the Gforce table of the database
+         * string
+         * Parameters: string tailNumber, string accelX, string accelY, string accelZ, string weight
+         * Return value : void
+         */
+        public void insertToGforceTable(string tailNumber, string accelX, string accelY, string accelZ, string weight)
+        {
+            try
+            {
+                string gForceQuery = "INSERT INTO gforce(tailNumber,accelX,accelY,accelZ,weight) VALUES('" + tailNumber + "','" + accelX + "','" + accelY + "','" + accelZ + "', '" + weight + "'); ";
+                //start the SQL commnad with provided query
+                MySqlCommand sqlGforceCommand = new MySqlCommand(gForceQuery, cnn);
+                sqlGforceCommand.Prepare();
+                sqlGforceCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                cnn.Close();
+            }
+        }
     }
 }
