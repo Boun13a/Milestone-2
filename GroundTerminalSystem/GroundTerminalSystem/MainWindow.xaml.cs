@@ -25,9 +25,10 @@ namespace GroundTerminalSystem
             InitializeComponent();
         }
 
-
+        
         private void HandleCheck(object sender, RoutedEventArgs e)
         {
+            
             //text2.Text = "Button is Checked";
             cb2.Content = "ON";
             txtArea.Visibility = Visibility.Visible;
