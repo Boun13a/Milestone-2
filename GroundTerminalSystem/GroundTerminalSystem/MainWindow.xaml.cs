@@ -65,21 +65,31 @@ namespace GroundTerminalSystem
             thStart.Start();
         }
 
+        /*
+         * Method Name: searchBtn()
+         * Description: This method invokes the function that searches the database
+         * Parameters: object sender, RoutedEventArgs e
+         * Return value : void
+         */
+        private void searchBtn(object sender, RoutedEventArgs e)
+        {
+            //get the user input
+            string searchTerm = txtSearch.Text;
+            if (searchTerm == "C-FGAX" || searchTerm == "C-GEFC" || searchTerm == "C-QWWT")
+            {
+
+                //pass it to the function that searches the database
+                databaseOperations.searchDtatBase(searchTerm);
+            }
+            else
+            {
+                MessageBox.Show("Please provide valid tail number.");
+            }
 
 
-        private void HandleCheck(object sender, RoutedEventArgs e)
-        {
-            
-            //text2.Text = "Button is Checked";
-            cb2.Content = "ON";
-            txtArea.Visibility = Visibility.Visible;
         }
-        private void HandleUnchecked(object sender, RoutedEventArgs e)
-        {
-            //text2.Text = "Button is unchecked.";
-            cb2.Content = "OFF";
-            txtArea.Visibility = Visibility.Hidden;
-        }
+
+
 
         /*
          * Method Name: startServer()
@@ -212,7 +222,36 @@ namespace GroundTerminalSystem
 
 
         }
+
+        /*
+         * Method Name: HandleCheck()
+         * Description: This method turns on the live mood of the ground terminal system 
+         * Parameters: object sender, RoutedEventArgs e
+         * Return value : void
+         */
+        private void HandleCheck(object sender, RoutedEventArgs e)
+        {
+            //text2.Text = "Button is Checked";
+            cb2.Content = "ON";
+            txtArea.Visibility = Visibility.Visible;
+            cb2.Background = Brushes.LightGreen;
+        }
+
+        /*
+         * Method Name: HandleUnCheck()
+         * Description: This method turns off the live mood of the ground terminal system 
+         * Parameters: object sender, RoutedEventArgs e
+         * Return value : void
+         */
+        private void HandleUnchecked(object sender, RoutedEventArgs e)
+        {
+            //text2.Text = "Button is unchecked.";
+            cb2.Content = "OFF";
+            txtArea.Visibility = Visibility.Hidden;
+            cb2.Background = Brushes.Red;
+        }
+
     }
 
-    
+
 }

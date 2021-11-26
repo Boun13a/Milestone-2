@@ -7,20 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1050">
     <Grid>
-
-        <Button Content="Button" HorizontalAlignment="Left" Margin="856,119,0,0" VerticalAlignment="Top" Width="75" />
-        <Button Content="Display" HorizontalAlignment="Left" Margin="856,161,0,0" VerticalAlignment="Top" Width="75" />
-        <ToggleButton x:Name = "cb2" Content = "Live Mode"  
-            Checked = "HandleCheck" Unchecked = "HandleUnchecked"  HorizontalAlignment="Left" Margin="856,272,0,0" VerticalAlignment="Top" Width="90" 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="995*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="807.476,126,0,0" VerticalAlignment="Top" Width="132" Click="searchBtn" Grid.Column="1"/>
+        <ToggleButton x:Name = "cb2" Content = "ON"  
+            Checked = "HandleCheck" Unchecked = "HandleUnchecked"  HorizontalAlignment="Left" Margin="807.476,405,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.538,5.545"
+              FontSize="25" Grid.Column="1"  
             />
-        <Grid RenderTransformOrigin="0.368,0.469">
-            <ListView Margin="10,24,223,20" Name="txtArea">
+        <Grid RenderTransformOrigin="0.368,0.469" Grid.ColumnSpan="2" Margin="0,0,0.2,0.4">
+            <ListView Margin="10,102,223.2,20.4" Name="txtArea" x:FieldModifier="public">
 
 
             </ListView>
+            <Label Content="Live Mode" HorizontalAlignment="Left" Margin="857,345,0,0" VerticalAlignment="Top" Width="129" FontSize="20"/>
+            <Label Content="Telemetry Data" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="303" FontSize="30"/>
 
         </Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="856,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtSearch"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="807.476,63,0,0" TextWrapping="Wrap" Text="Type here" VerticalAlignment="Top" Width="132" Name="txtSearch" Padding="10" Grid.Column="1" />
 
 
 

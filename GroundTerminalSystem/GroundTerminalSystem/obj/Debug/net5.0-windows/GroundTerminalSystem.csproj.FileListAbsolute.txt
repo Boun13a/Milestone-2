@@ -42,3 +42,12 @@ C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\obj
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\obj\Debug\net5.0-windows\ref\GroundTerminalSystem.dll
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\obj\Debug\net5.0-windows\GroundTerminalSystem.pdb
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\obj\Debug\net5.0-windows\GroundTerminalSystem.genruntimeconfig.cache
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\obj\Debug\net5.0-windows\GroundTerminalSystem.csproj.CopyComplete
