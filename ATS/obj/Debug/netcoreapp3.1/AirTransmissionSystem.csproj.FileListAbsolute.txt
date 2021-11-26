@@ -1,0 +1,12 @@
+D:\Milestone2\Milestone-2\ATS\obj\Debug\netcoreapp3.1\AirTransmissionSystem.AssemblyInfoInputs.cache
+D:\Milestone2\Milestone-2\ATS\obj\Debug\netcoreapp3.1\AirTransmissionSystem.AssemblyInfo.cs
+D:\Milestone2\Milestone-2\ATS\obj\Debug\netcoreapp3.1\AirTransmissionSystem.csproj.CoreCompileInputs.cache
+D:\Milestone2\Milestone-2\ATS\bin\Debug\netcoreapp3.1\AirTransmissionSystem.exe
+D:\Milestone2\Milestone-2\ATS\bin\Debug\netcoreapp3.1\AirTransmissionSystem.deps.json
+D:\Milestone2\Milestone-2\ATS\bin\Debug\netcoreapp3.1\AirTransmissionSystem.runtimeconfig.json
+D:\Milestone2\Milestone-2\ATS\bin\Debug\netcoreapp3.1\AirTransmissionSystem.runtimeconfig.dev.json
+D:\Milestone2\Milestone-2\ATS\bin\Debug\netcoreapp3.1\AirTransmissionSystem.dll
+D:\Milestone2\Milestone-2\ATS\bin\Debug\netcoreapp3.1\AirTransmissionSystem.pdb
+D:\Milestone2\Milestone-2\ATS\obj\Debug\netcoreapp3.1\AirTransmissionSystem.dll
+D:\Milestone2\Milestone-2\ATS\obj\Debug\netcoreapp3.1\AirTransmissionSystem.pdb
+D:\Milestone2\Milestone-2\ATS\obj\Debug\netcoreapp3.1\AirTransmissionSystem.genruntimeconfig.cache

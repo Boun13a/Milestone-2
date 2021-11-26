@@ -142,7 +142,7 @@ namespace AirTransmissionSystem
         {
             int lineCounter = 0;
             argFilePath += ".txt";
-            var path = Path.Combine(Directory.GetCurrentDirectory(), argFilePath);s
+            var path = Path.Combine(Directory.GetCurrentDirectory(), argFilePath);
             foreach (string line in File.ReadLines(path))
             {
                 lineCounter++;
