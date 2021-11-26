@@ -112,7 +112,10 @@ namespace GroundTerminalSystem
 
                 // Start listening for client requests.
                 server.Start();
-
+                
+                this.Dispatcher.Invoke((Action)(() => { status.Content = "waiting for connectin..."; }));
+                this.Dispatcher.Invoke((Action)(() => { status.Foreground = Brushes.Orange; }));
+                
                 // Buffer for reading data
                 Byte[] bytes = new Byte[256];
                 String data = null;
@@ -125,12 +128,11 @@ namespace GroundTerminalSystem
                 // Enter the listening loop.
                 while (true)
                 {
-
-
                     // Perform a blocking call to accept requests.
               
                     TcpClient client = server.AcceptTcpClient();
-
+                    this.Dispatcher.Invoke((Action)(() => { status.Content = "Connected!"; }));
+                    this.Dispatcher.Invoke((Action)(() => { status.Foreground = Brushes.Green; }));
                     data = null;
 
                     // Get a stream object for reading and writing
@@ -171,7 +173,10 @@ namespace GroundTerminalSystem
 
                     // Shutdown and end connection
                     client.Close();
+                    
                 }
+
+               
             }
             catch (SocketException e)
             {
@@ -182,7 +187,7 @@ namespace GroundTerminalSystem
             {
                 // Stop listening for new clients.
                 server.Stop();
-
+                
             }
 
 

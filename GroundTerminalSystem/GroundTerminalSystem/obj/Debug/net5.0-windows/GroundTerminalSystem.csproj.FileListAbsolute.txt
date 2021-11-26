@@ -50,4 +50,3 @@ C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\MySql.Data.dll
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\ZstdNet.dll
-C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\obj\Debug\net5.0-windows\GroundTerminalSystem.csproj.CopyComplete
