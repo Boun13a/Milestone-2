@@ -50,3 +50,12 @@ C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\MySql.Data.dll
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\asada\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\moham\OneDrive\Desktop\Milestone-2\GroundTerminalSystem\GroundTerminalSystem\obj\Debug\net5.0-windows\GroundTerminalSystem.csproj.CopyComplete

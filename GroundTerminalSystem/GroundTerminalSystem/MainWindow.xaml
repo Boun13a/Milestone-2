@@ -11,23 +11,27 @@
             <ColumnDefinition Width="49*"/>
             <ColumnDefinition Width="995*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="807.476,126,0,0" VerticalAlignment="Top" Width="132" Click="searchBtn" Grid.Column="1"/>
+
         <ToggleButton x:Name = "cb2" Content = "ON"  
             Checked = "HandleCheck" Unchecked = "HandleUnchecked"  HorizontalAlignment="Left" Margin="807.476,405,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.538,5.545"
               FontSize="25" Grid.Column="1"  
             />
         <Grid RenderTransformOrigin="0.368,0.469" Grid.ColumnSpan="2" Margin="0,0,0.2,0.4">
-            <ListView Margin="10,102,223.2,20.4" Name="txtArea" x:FieldModifier="public">
+            <ListView Margin="10,102,0,21" Name="txtArea" x:FieldModifier="public" HorizontalAlignment="Left" Width="627">
 
 
             </ListView>
-            <Label Content="Live Mode" HorizontalAlignment="Left" Margin="857,345,0,0" VerticalAlignment="Top" Width="129" FontSize="20"/>
+            <Label Content="Live Mode:" HorizontalAlignment="Left" Margin="727,402,0,0" VerticalAlignment="Top" Width="129" FontSize="20"/>
             <Label Content="Telemetry Data" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="303" FontSize="30"/>
             <Label  HorizontalAlignment="Left" Margin="457,36,0,0" VerticalAlignment="Top" Width="180" Height="28" Name="status" FontSize="15"/>
+            <ListView Margin="652,145,10,87" Name="searchResult">
+
+            </ListView>
+
 
         </Grid>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="807.476,63,0,0" TextWrapping="Wrap" Text="Type here" VerticalAlignment="Top" Width="132" Name="txtSearch" Padding="10" Grid.Column="1" />
-
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="643,102,0,0" TextWrapping="Wrap" Text="Type here" VerticalAlignment="Top" Width="132" Name="txtSearch" Padding="10" Grid.Column="1" />
+        <Button Content="Search" HorizontalAlignment="Left" Margin="808,111,0,0" VerticalAlignment="Top" Width="132" Click="searchBtn" Grid.Column="1" RenderTransformOrigin="0.491,0.398"/>
 
 
 

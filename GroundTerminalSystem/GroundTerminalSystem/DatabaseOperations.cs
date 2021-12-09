@@ -94,74 +94,7 @@ namespace GroundTerminalSystem
             }
         }
 
-        /*
-         * Method Name: searchDtabase()
-         * Description: This method searches the database with the given tailNumber string
-         * Parameters: string result
-         * Return value : void
-         */
-        public void searchDtatBase(string result)
-        {
-
-            try
-            {
-
-                //prepare the search query
-                string QuerySearch = "SELECT G._timeStamp, G.tailNumber, G.accelX,G.accelY,G.accelZ,G.weight,A.altitude, A.pitch,A.bank FROM gforce G INNER JOIN attitude A ON A.aID = G.gID WHERE A.tailNumber  = ('" + result + "');";
-                //use the opened connection
-                using (cnn)
-                {
-                    // connection.Open();
-                    using (var command = new MySqlCommand(QuerySearch, cnn))
-                    {
-
-                        command.Prepare();
-
-                        using (var reader = command.ExecuteReader())
-                        {
-                            //read all the data that is associated with the given tailnumber
-                            while (reader.Read())
-                            {
-                                var col1 = reader.GetString(0);
-                                var col2 = reader.GetString(1);
-                                var col3 = reader.GetString(2);
-                                var col4 = reader.GetString(3);
-                                var col5 = reader.GetString(4);
-                                var col6 = reader.GetString(5);
-                                var col7 = reader.GetString(6);
-                                var col8 = reader.GetString(7);
-                                var col9 = reader.GetString(8);
-                                var entireCol = col1 + ", " + col2 + ", " + col3 + ", " + col4 + ", " + col5 + ", " + col6 + ", " + col7 + ", " + col8 + ", " + col9;
-
-
-                                //display the data on the UI
-                                foreach (Window window in Application.Current.Windows)
-                                {
-                                    if (window.GetType() == typeof(MainWindow))
-                                    {
-                                        (window as MainWindow).txtArea.Items.Add(entireCol);
-
-                                    }
-                                    //also write to the text file
-
-
-                                }
-                                WriteToTextFile.persistToTextFile(result, entireCol);
-
-                            }
-
-                        }
-
-                    }
-                    
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-                cnn.Close();
-            }
-        }
+     
 
 
     }

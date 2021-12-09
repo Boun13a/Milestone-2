@@ -42,15 +42,16 @@ namespace GroundTerminalSystem
         MySqlConnection cnn;
         string connetionString = null;
         public static TcpListener server = null;
+        Thread t;
 
         //variables to hold the telemetry data as they come in
-        string tailNumber;                               
-        string accelX;                                  
-        string accelY;                                  
-        string accelZ;                                  
-        string Weight;                                  
-        string altitude;                             
-        string pitch;                                   
+        string tailNumber;
+        string accelX;
+        string accelY;
+        string accelZ;
+        string Weight;
+        string altitude;
+        string pitch;
         string bank;
         string checkSumReceived;
         int CheckSum;
@@ -60,7 +61,7 @@ namespace GroundTerminalSystem
         {
 
             InitializeComponent();
-            
+
             Thread thStart = new Thread(startServer);
             thStart.Start();
         }
@@ -73,19 +74,90 @@ namespace GroundTerminalSystem
          */
         private void searchBtn(object sender, RoutedEventArgs e)
         {
-            //get the user input
-            string searchTerm = txtSearch.Text;
+
+            string searchTerm = txtSearch.Text.ToUpper();
             if (searchTerm == "C-FGAX" || searchTerm == "C-GEFC" || searchTerm == "C-QWWT")
             {
+                t = new Thread(() => UpdateUI(searchTerm));
+                t.Start();
 
-                //pass it to the function that searches the database
-                databaseOperations.searchDtatBase(searchTerm);
             }
             else
             {
                 MessageBox.Show("Please provide valid tail number.");
             }
 
+
+
+        }
+
+
+
+
+        public void UpdateUI(string searchTerm)
+        {
+            MySqlConnection searchCon;
+            //connectin string for the database
+            connetionString = "server=localhost;database=telemtrydb;uid=root;pwd=root";
+            //get the user input
+            searchCon = databaseOperations.ConnectToDatabase(connetionString);
+            searchCon.Open();
+            //pass it to the function that searches the database
+            // databaseOperations.searchDtatBase(searchTerm);
+            try
+            {
+
+                //prepare the search query
+                string QuerySearch = "SELECT G._timeStamp, G.tailNumber, G.accelX,G.accelY,G.accelZ,G.weight,A.altitude, A.pitch,A.bank FROM gforce G INNER JOIN attitude A ON A.aID = G.gID WHERE A.tailNumber  = ('" + searchTerm + "');";
+                //use the opened connection
+                using (searchCon)
+                {
+                    // connection.Open();
+                    using (var command = new MySqlCommand(QuerySearch, searchCon))
+                    {
+
+                        command.Prepare();
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            //read all the data that is associated with the given tailnumber
+                            while (reader.Read())
+                            {
+                                var col1 = reader.GetString(0);
+                                var col2 = reader.GetString(1);
+                                var col3 = reader.GetString(2);
+                                var col4 = reader.GetString(3);
+                                var col5 = reader.GetString(4);
+                                var col6 = reader.GetString(5);
+                                var col7 = reader.GetString(6);
+                                var col8 = reader.GetString(7);
+                                var col9 = reader.GetString(8);
+                                var entireCol = col1 + ", " + col2 + ", " + col3 + ", " + col4 + ", " + col5 + ", " + col6 + ", " + col7 + ", " + col8 + ", " + col9;
+
+
+                                //display the data on the UI
+
+                                this.Dispatcher.BeginInvoke(new Action(() => { searchResult.Items.Add(entireCol); }));
+
+                                //also write to the text file
+
+
+
+                                WriteToTextFile.persistToTextFile(searchTerm, entireCol);
+
+                            }
+
+                        }
+                        t.Join();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                searchCon.Close();
+            }
 
         }
 
@@ -112,15 +184,15 @@ namespace GroundTerminalSystem
 
                 // Start listening for client requests.
                 server.Start();
-                
+
                 this.Dispatcher.Invoke((Action)(() => { status.Content = "waiting for connectin..."; }));
                 this.Dispatcher.Invoke((Action)(() => { status.Foreground = Brushes.Orange; }));
-                
+
                 // Buffer for reading data
                 Byte[] bytes = new Byte[256];
                 String data = null;
                 //connectin string for the database
-                connetionString = "server=localhost;database=flightdata;uid=root;pwd=root";
+                connetionString = "server=localhost;database=telemtrydb;uid=root;pwd=root";
                 //open the connection to the database
                 cnn = databaseOperations.ConnectToDatabase(connetionString);
                 cnn.Open();
@@ -129,7 +201,7 @@ namespace GroundTerminalSystem
                 while (true)
                 {
                     // Perform a blocking call to accept requests.
-              
+
                     TcpClient client = server.AcceptTcpClient();
                     this.Dispatcher.Invoke((Action)(() => { status.Content = "Connected!"; }));
                     this.Dispatcher.Invoke((Action)(() => { status.Foreground = Brushes.Green; }));
@@ -145,7 +217,7 @@ namespace GroundTerminalSystem
                     {
                         // Translate data bytes to a ASCII string.
                         data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                  
+
 
                         //call splitPAcket here...
                         spilittedPacket = splitPacket(data);
@@ -160,23 +232,25 @@ namespace GroundTerminalSystem
                         altitude = spilittedPacket[7];
                         pitch = spilittedPacket[8];
                         bank = spilittedPacket[9];
- 
+
                         //if it is valid Display to screen
-                        this.Dispatcher.Invoke((Action)(() => { txtArea.Items.Add(data); }));
+
+                        this.Dispatcher.BeginInvoke(new Action(() => { txtArea.Items.Add(data); }));
                         //insert into the attitude table
                         databaseOperations.insertToAttitudeTable(tailNumber, altitude, pitch, bank);
                         //insert into Gforce table
                         databaseOperations.insertToGforceTable(tailNumber, accelX, accelY, accelZ, Weight);
+                        // t.Abort();
 
                     }
 
 
                     // Shutdown and end connection
                     client.Close();
-                    
+
                 }
 
-               
+
             }
             catch (SocketException e)
             {
@@ -187,7 +261,7 @@ namespace GroundTerminalSystem
             {
                 // Stop listening for new clients.
                 server.Stop();
-                
+
             }
 
 
@@ -209,7 +283,7 @@ namespace GroundTerminalSystem
             }
             checkSumReceived = result[10];
 
-            
+
             CheckSum = (int)(Convert.ToDouble(result[7]) + Convert.ToDouble(result[8]) + Convert.ToDouble(result[9])) / 3;
             if (CheckSum == Convert.ToInt32(checkSumReceived))
             {
